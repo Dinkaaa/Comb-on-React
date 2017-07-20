@@ -38,34 +38,18 @@ module.exports = {
                 ],
                 exclude: /node_modules/
             },
-            {
-                test: /\.sass$/,
-                use: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                            plugins: [
-                                autoprefixer('last 2 versions')
-                            ]
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true
-                        }
+           {
+                test: /\.scss$/,
+                use: [{
+                    loader: "style-loader"
+                }, {
+                    loader: "css-loader"
+                }, {
+                    loader: "sass-loader",
+                    options: {
+                        includePaths: ["absolute/path/a", "absolute/path/b"]
                     }
-                ]
+                }]
             },
             {
                 test: /\.html$/,

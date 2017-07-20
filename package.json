@@ -1,5 +1,5 @@
 {
-  "name": "sagebrush-crm",
+  "name": "comb",
   "version": "0.0.1",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
@@ -26,7 +26,7 @@
     "react-hot-loader": "^3.0.0-beta.7",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.0.0",
+    "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.0"
   },
   "scripts": {
@@ -34,8 +34,16 @@
     "serve": "webpack-dev-server"
   },
   "dependencies": {
+    "history": "^2.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "5.0.5",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
     "uuid": "^3.1.0"
   }
 }
