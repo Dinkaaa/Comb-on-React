@@ -1,6 +1,10 @@
 {
   "name": "comb",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Dinkaaa/Comb-on-React.git"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-cli": "^6.24.1",
