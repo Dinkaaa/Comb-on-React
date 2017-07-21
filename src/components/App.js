@@ -4,41 +4,39 @@ import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import { createStore } from 'redux';
 
-import CollectionsList from './Collections/CollectionsList';
-import OptionsCollection from './Collections/OptionsCollection';
+
 
 import * as DataService from './DataService';
 import {token, url, version} from '.././index.js';
 
 import {getCollections} from './actions/collections';
+import { Route } from 'react-router';
+
+import ProductsPage from './Products/ProductsPage';
+
+import MainCollections from './Collections/MainCollections';
 
 class App extends Component {
     componentDidMount(){
         this.props.onGetCOllections();
     }
     render() {
-        console.log('TEST', this.props.CollList);
         return (
-            <div className="comb-app">
-                <OptionsCollection 
-                onAddCollection={this.props.onAddCollection} 
-                onFindCollection={this.props.onFindCollection} 
-                />
-                <div  className="comb-content comb-content-collection-page">
-                    <CollectionsList 
-                    collection={this.props.CollList}
-                    onRemoveCollection={this.props.onRemoveCollection}
-                    />
-                </div>
+            <MainCollections 
+            className="comb-app"
+            onAddCollection={this.props.onAddCollection} 
+            onFindCollection={this.props.onFindCollection} 
+            collection={this.props.CollList}
+            onRemoveCollection={this.props.onRemoveCollection}
+            ></MainCollections>
+        )
                 
-            </div>
-                
-            )
     }
 };
+
 export default connect(
     (state, ownProps) => ({
-       CollList:state.CollList.filter(element => element.Name.includes(state.filterCollections)),
+       CollList:state.CollList.filter(element => element.Name.toLowerCase().includes(state.filterCollections)),
        ownProps
     }),
     // state => ({

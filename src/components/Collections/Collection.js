@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
+
 
 export default class Collection extends Component {
     removeCollection(){
@@ -27,7 +28,7 @@ export default class Collection extends Component {
                     <div className="comb-collection-block-active ">
                         <img src="../img/comb-eye-slider.svg" alt=""/>
                         
-                        <a className="comb-btn comb-btn-view-collection">view collection</a>
+                        <Link className="comb-btn comb-btn-view-collection=" to={`/${this.props.collection.CollectionID}`} >view collection</Link>
                         <button 
                         className="comb-btn comb-remove-collection"
                         onClick={this.removeCollection.bind(this)}
