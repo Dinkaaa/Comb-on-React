@@ -22,6 +22,7 @@ class App extends Component {
     }
     render() {
         return (
+            <div>
             <MainCollections 
             className="comb-app"
             onAddCollection={this.props.onAddCollection} 
@@ -29,6 +30,8 @@ class App extends Component {
             collection={this.props.CollList}
             onRemoveCollection={this.props.onRemoveCollection}
             ></MainCollections>
+            {this.props.children}
+            </div>
         )
                 
     }
